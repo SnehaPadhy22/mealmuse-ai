@@ -1,103 +1,94 @@
 
+@'
 # MealMuse AI 🍽️
 
-MealMuse AI is an AI-powered recipe application that helps users discover recipes based on the ingredients they have available.
+MealMuse AI is an AI-powered recipe and meal-planning mobile application built using Flutter and Python. It integrates Google's Gemini API to provide AI-assisted recipe discovery and cooking assistance.
 
 ## Features
 
-- AI-powered recipe generation using Google Gemini.
-- Generate recipes from available ingredients.
-- View recipe details, ingredients and cooking instructions.
+- AI-powered recipe discovery and cooking assistance.
+- Recipe details and browsing.
 - Save and manage favourite recipes.
-- Plan meals for different days.
-- Create and manage grocery lists.
+- Weekly meal planning.
+- Grocery list management.
+- Local data storage and management.
+- Python backend with Gemini API integration.
 
 ## Technology Stack
 
-**Mobile Application**
+### Frontend
 - Flutter
 - Dart
-- SQLite
+- Material UI
 
-**Backend**
+### Backend
 - Python
-- FastAPI
+- REST API
 - Google Gemini API
-- Uvicorn
 
-## Backend Architecture
+### Database and Storage
+- SQLite
+- Local application storage
 
-The Flutter application communicates with the FastAPI backend through REST API endpoints. The backend connects to Google Gemini to generate recipes based on user-provided ingredients.
+## Project Structure
 
-## API Endpoints
-
-| Method | Endpoint | Description |
-|---|---|---|
-| GET | `/` | API home |
-| GET | `/health` | Backend health check |
-| POST | `/generate-recipe` | Generate AI recipes |
-
-## Backend Setup
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/SnehaPadhy22/mealmuse-ai.git
-cd mealmuse-ai
+```text
+MealMuse_AI/
+├── android/
+├── assets/
+│   └── images/
+├── backend/
+│   ├── services/
+│   ├── main.py
+│   ├── requirements.txt
+│   └── .env.example
+├── lib/
+│   ├── models/
+│   ├── screens/
+│   ├── services/
+│   ├── widgets/
+│   └── main.dart
+├── test/
+├── pubspec.yaml
+└── README.md
 ```
 
-### 2. Create a virtual environment
+## Getting Started
+
+### Flutter Application
+
+1. Install Flutter and configure the Android development environment.
+2. Clone this repository.
+3. Navigate to the project directory.
+4. Install dependencies:
 
 ```bash
-python -m venv venv
+flutter pub get
 ```
 
-Activate it:
+5. Run the application:
 
-Windows:
 ```bash
-venv\Scripts\activate
+flutter run
 ```
 
-### 3. Install dependencies
+### Python Backend
+
+1. Navigate to the backend directory.
+2. Install the dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Configure environment variables
+3. Configure the required environment variables using `.env.example`.
+4. Follow the backend-specific instructions in `backend/README.md`.
 
-Create a `.env` file in the backend root directory:
+**Note:** Never upload API keys, passwords, or `.env` files to GitHub.
 
-```env
-GEMINI_API_KEY=your_gemini_api_key
-GEMINI_MODEL=gemini-3.5-flash
-```
+## Author
 
-Never upload your actual API key to GitHub.
+Sneha Padhy
 
-### 5. Start the backend
-
-```bash
-uvicorn main:app --reload
-```
-
-The backend will run locally at:
-
-`http://127.0.0.1:8000`
-
-API documentation:
-
-`http://127.0.0.1:8000/docs`
-
-## Live Backend
-
-https://mealmuse-ai.onrender.com
-
-## Project Status
-
-The backend is deployed on Render, and the Flutter application has been tested on an Android device.
-
----
-
-**Developed as an AI-powered recipe application project.**
+Developed as an independent project.
+'@ | Set-Content -Path README.md -Encoding UTF8
